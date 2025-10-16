@@ -2,7 +2,9 @@
 <h1>Listado de posts <button class="btn btn-primary">Esto es un buton con bootstrap</button></h1>
 <ul class="posts-list">
     <li v-for="post in posts" :key="post.id">
-        {{ post.title }}
+        <router-link :to="{ name: 'PostDetail', params: { id: post.id } }">
+            {{ post.title }}
+        </router-link>
     </li>
 </ul>
 </template>
@@ -31,13 +33,17 @@
     height: 75px;
     padding: 20px;
     list-style-type: none;
+
+    a{
+        text-decoration: none;
+    }
 }
 
 .posts-list li{
     padding: 10px;
     width: 100%;
     border: 1px solid;
-    color: $red;
+    color: $primaryColor;
 }
 
 </style>
