@@ -29,11 +29,20 @@ const tryAuth = async () => {
     const authService = new AuthService();
     const response = await authService.login(email.value,password.value)
     if (response) {
+        // $cookies.set('token', response.token);
         alert('Login successful');
     } else {
         alert('Login failed');
     }
 }
+
+// const getInfoFromToken = () => {
+//     const token = $session.get('token');
+// }
+
+// const takeInfoFromUser = () => {
+//     const token = $cookies.get('token');
+// }
 
 
 

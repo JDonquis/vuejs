@@ -30,6 +30,9 @@ class AuthService {
             }
 
             this.jwt.value = data.data.access_token;
+            // $cookies.set('token', this.jwt.value);
+            $session.start();
+            $session.set('token', this.jwt.value);
             return true;
 
         }
